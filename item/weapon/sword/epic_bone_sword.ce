@@ -1,0 +1,25 @@
+from core.template.item import createPotentials, Genus, Sword, StatAttribute
+
+sword = Sword(
+    name = "EpicBoneSword",
+    power = 100,
+    level = 50,
+    experience = 50,
+    materials = [
+        Genus('lumber', quantity=5),
+        Genus('bone', quantity=2),
+        Genus('vine', quantity=6),
+    ]
+)
+
+sword.equippable(
+    slot = "weapon",
+    levelRequired = 51,
+    potentials = [
+        StatAttribute('ATK', valueRange=(30, 40), weight=100),
+        StatAttribute('LUCK', valueRange=(22, 36), weight=10),
+        StatAttribute('HPRegen', valueRange=(11, 16), weight=10),
+        StatAttribute('reach', valueRange=(23, 27), weight=10),
+        StatAttribute('knockback', valueRange=(11, 15), weight=10)
+    ]
+)

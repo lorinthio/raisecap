@@ -1,0 +1,38 @@
+from functools import partial
+
+from core.combat import addLevelUpStats
+from core.component.breath import Breath
+from core.component.descent import Descent
+from core.component.research import Research
+from core.component.infusion import Infusion
+from core.template.template import Template, RenderType
+
+from raisecap.tuning.player import PlayerTuning
+
+import siege.component
+from siege.util import Rect, Vector
+
+player = Template(name="Player", renderType=RenderType.None, isPersistent=False)
+
+player.add(siege.component.Inventory([""]))
+player.add(siege.component.Reserves())
+player.add(siege.component.Toolbar())
+player.add(siege.component.PlayerState())
+
+combat = siege.component.Combat(siege.component.CombatTeam.ALPHA, Vector(-8, -22))
+
+combat.onLevelUp = partial(addLevelUpStats, PlayerTuning)
+combat.levels = PlayerTuning.LEVEL_EXPERIENCE_REQUIRED
+player.add(combat)
+
+player.add(siege.component.Effects())
+player.add(siege.component.Event())
+player.add(Research())
+player.add(Breath(100, Rect(0, 0, 16, 16)))
+player.add(Descent())
+player.add(Infusion())
+player.add(siege.component.Legend())
+player.add(siege.component.Statistics())
+player.add(siege.component.Book())
+
+player.hasMapMarker('player', icon="mods/core/cartography/player.png", updatePosition=True)

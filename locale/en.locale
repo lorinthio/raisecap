@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+# version: 0.9.0
+
+name = "English"
+
+locale("EpicBoneSword", "Epic Bone Sword")
+locale("EpicBoneSwordFlavor", "This epic blade is made of a single sharpened bone.")
+
+locale("FeatherFall", "Feather Falling")
+locale("FeatherFallDesc", "Permanently decreases damage taken from falling by {fall_reduction}%")
+locale("DodgeExpertiseDescFallReduction", "Reduces damage you take when falling by another {fall_reduction}%")
