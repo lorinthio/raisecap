@@ -5,6 +5,7 @@ from core.effect.base import EffectBase
 from raisecap.tuning.effect import EffectTuning
 
 from siege import game
+from siege.log import Log
 
 
 class Focus(EffectBase):
@@ -21,6 +22,7 @@ class Focus(EffectBase):
     def onDealDamage(self, ownerId, player, results, attacker, target, data, isCritical, criticalFactor):
         if ownerId == attacker.id and data.attackType in [AttackType.Melee, AttackType.Ranged] and data.damageType is DamageType.Physical:
             results.isCritical = True
+            Log.info(str(self.TUNING.AMOUNTS))
             results.criticalFactor += self.TUNING.AMOUNTS[self.level - 1] / 100.0
             attacker.effects.remove(self.TUNING.NAME)
 

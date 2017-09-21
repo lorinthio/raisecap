@@ -1,12 +1,12 @@
 {
     "title": "Raised Level Cap",
     "author": "Lorinth",
-    "description": "WARNING: YOU NEED TO PLAY IN THE UNSTABLE VERSION OF THE GAME, or you will crash\n\nA mod that extends player/monster levels to 100. Talents and abilities are also extended\n\nCurrently this mod doesn't extend gear or new monster types. These will be added in the future!\n\nIf you have any ideas for new abilities, monsters, etc let me know!",
-    "version": "1.1.4",
-    "priority": 0,
+    "description": "A mod that extends player/monster levels to 100. Talents and abilities are also extended\n\nCurrently this mod doesn't extend gear or new monster types. These will be added in the future!\n\nIf you have any ideas for new abilities, monsters, etc let me know! \n\nUpdated for 1.4.9!",
+    "version": "1.1.5",
+    "priority": 1,
     "tags": [
-        "Character",
-        "Tweak"
+        "Tweak",
+        "Character"
     ],
     "workshopid": 708929851
 }

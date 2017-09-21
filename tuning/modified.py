@@ -2,6 +2,8 @@ from core.talent import addSkill, PassiveSkill, getTuningData
 from raisecap.tuning.skill import SkillTuning
 from functools import partial
 
+from siege.log import Log
+
 
 def modifyArmsTalent(talent):
     pass
@@ -17,6 +19,7 @@ def modifyGatherTalent(talent):
 
 def modifyExploreTalent(talent):
     addSkill(talent, FeatherFalling)
+    Log.info('Modified the explore talent!')
 
 
 def modifyCraftTalent(talent):

@@ -2,6 +2,7 @@ from core.helper import AttrDict
 from core.util import enum
 from siege.graphic import Color
 from siege.util import minutes, seconds
+from siege.log import Log
 
 from core.tuning.skill import SkillTuning as st
 
@@ -1224,3 +1225,5 @@ class SkillTuning(object):
     st.LOCKPICK = LOCKPICK
     st.FLARE = FLARE
     st.CRYSTAL_DOWSING = CRYSTAL_DOWSING
+
+    Log.info("Augmented skills")
